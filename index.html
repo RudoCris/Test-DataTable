@@ -10,14 +10,6 @@
 
   <script src="getData.js"></script>
   <script>
-    //PRINT buttonin avelacnumenq event - vorpesi print anenq stacac datan consoli mech
-    document.getElementById('printTable').addEventListener("click", function(evt){
-      //ipr te serveric datan stanumenq u print anum consoli mech
-      getData(function(data){
-        console.table(data); //here we can work with data
-      });
-    }, false)
-
     function drawTable(data){
       var table = "<table border=1>";
           data.forEach(function(person, i, data){
@@ -32,11 +24,20 @@
       document.getElementById("app").innerHTML = table;
     }
 
+    //DRAW buttonin avelacnumenq event - vorpesi nkarenq stacac datan monitori vra
     document.getElementById('drawTable').addEventListener("click", function(evt){
       getData(function(data){
         drawTable(data);
       });
     }, false);
+
+    //PRINT buttonin avelacnumenq event - vorpesi print anenq stacac datan consoli mech
+    document.getElementById('printTable').addEventListener("click", function(evt){
+      //ipr te serveric datan stanumenq u print anum consoli mech
+      getData(function(data){
+        console.table(data); //here we can work with data
+      });
+    }, false)
   </script>
 </body>
 </html>

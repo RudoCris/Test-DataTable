@@ -5,22 +5,19 @@
 <body>
   <div id="app"></div>
 
-  <input type="button" value="PRINT" name="print" id="printBtn" />
+  <input type="button" value="PRINT" name="print" id="printTable" />
+  <input type="button" value="DRAW" name="draw" id="drawTable" />
 
   <script src="getData.js"></script>
   <script>
-    //add event on PRINT button - for print data in console
-    document.getElementById('printBtn').addEventListener("click", function(evt){
-      //this is how we use getData function
+    //PRINT buttonin avelacnumenq event - vorpesi print anenq stacac datan consoli mech
+    document.getElementById('printTable').addEventListener("click", function(evt){
+      //ipr te serveric datan stanumenq u print anum consoli mech
       getData(function(data){
         console.table(data); //here we can work with data
       });
     }, false)
-
-    getData(function(data){
-      drawTable(data)
-    });
-
+    //lracreq ays cod@ vor chisht table tpi
     function drawTable(data){
       var table = "<table border=1>";
           data.forEach(function(person, i, data){
@@ -34,6 +31,12 @@
 
       document.getElementById("app").innerHTML = table;
     }
+
+    document.getElementById('drawTable').addEventListener("click", function(evt){
+      getData(function(data){
+        drawTable(data);
+      });
+    }, false);
   </script>
 </body>
 </html>

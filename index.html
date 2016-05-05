@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>TestDatatable</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <input type="button" value="PRINT" name="print" id="printTable" />
+  <input type="button" value="DRAW" name="draw" id="drawTable" />
+
+  <script src="getData.js"></script>
+  <script>
+    //PRINT buttonin avelacnumenq event - vorpesi print anenq stacac datan consoli mech
+    document.getElementById('printTable').addEventListener("click", function(evt){
+      //ipr te serveric datan stanumenq u print anum consoli mech
+      getData(function(data){
+        console.table(data); //here we can work with data
+      });
+    }, false)
+
+
+    //lracreq ays cod@ vor chisht table tpi
+    function drawTable(data){
+      document.getElementById("app").innerHTML = "TABLE!! ho-ho-ho";
+    }
+
+
+    document.getElementById('drawTable').addEventListener("click", function(evt){
+      getData(function(data){
+        drawTable(data);
+      });
+    }, false);
+  </script>
+</body>
+</html>

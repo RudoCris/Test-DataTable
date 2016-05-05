@@ -11,9 +11,9 @@
 var getData = function(fn) {
   var data = localStorage.getItem("data");
 
-  fn(data);
+  fn(JSON.parse(data));
 }
 
 var updateData = function(newData){
-  localStorage.setItem("data", newData);
+  localStorage.setItem("data", JSON.stringify(newData));
 }
